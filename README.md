@@ -121,7 +121,7 @@ LayerWhat it doesModel confidenceBase intensity from the classifier's top-emotio
 -> Deliberately avoided. The goal was a system that is fast, free to deploy, and fully offline-capable — without sacrificing emotional range. Lightweight transformer + pyttsx3 achieves this. The expressiveness comes from smart parameterization, not expensive models.
 
 ---
-## 📄 Files Overview
+## Files Overview
 
 ### Backend Files
 - **`app/main.py`** — FastAPI app with `/speak` endpoint, static file serving
@@ -136,7 +136,7 @@ LayerWhat it doesModel confidenceBase intensity from the classifier's top-emotio
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 This project demonstrates:
 - **Emotion Analysis** — Using pre-trained NLP models
@@ -148,13 +148,13 @@ This project demonstrates:
 
 ---
 
-## 📝 License
+## License
 
 This project is provided as-is for demonstration and educational purposes.
 
 ---
 
-## 🎤 Credits
+## Credits
 
 **Empathy Engine** — AI with Human Voice  
 Built using FastAPI, pyttsx3, and Transformers
