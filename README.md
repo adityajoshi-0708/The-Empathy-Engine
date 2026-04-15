@@ -139,7 +139,7 @@ This project is provided as-is for demonstration and educational purposes.
 ## 🎤 Credits
 
 **Empathy Engine** — AI with Human Voice  
-Built with ❤️ using FastAPI, pyttsx3, and Transformers
+Built using FastAPI, pyttsx3, and Transformers
 
 ---
 
