@@ -1,21 +1,21 @@
-# 🎤 Empathy Engine – AI with Human Voice
+#  Empathy Engine – AI with Human Voice
 
 A production-ready web application that detects emotion from text and generates expressive speech with emotional modulation. Perfect for impressing judges in a 30-second demo!
 
 ---
 
-## 🎯 Features
+##  Features
 
-✅ **Emotion Detection** — Classifies text into 6 emotion categories (joy, anger, sadness, fear, surprise, neutral)  
-✅ **Dynamic Voice Modulation** — Adjusts speech rate, volume, and voice based on detected emotion  
-✅ **Human-Touch Enhancement** — Rewrites text with pauses, emphasis, and emotional fillers  
-✅ **Beautiful UI** — Color-coded emotion display, real-time feedback, preset examples  
-✅ **Fast & Lightweight** — No heavy ML models, offline TTS, <3 seconds generation  
-✅ **Production-Ready** — Deployment-ready with FastAPI + Render compatibility  
+**Emotion Detection** — Classifies text into 6 emotion categories (joy, anger, sadness, fear, surprise, neutral)  
+**Dynamic Voice Modulation** — Adjusts speech rate, volume, and voice based on detected emotion  
+**Human-Touch Enhancement** — Rewrites text with pauses, emphasis, and emotional fillers  
+**Beautiful UI** — Color-coded emotion display, real-time feedback, preset examples  
+**Fast & Lightweight** — No heavy ML models, offline TTS, <3 seconds generation  
+**Production-Ready** — Deployment-ready with FastAPI + Render compatibility  
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 DarvixAI_Assement/
@@ -39,7 +39,7 @@ DarvixAI_Assement/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -56,7 +56,7 @@ Navigate to: `http://localhost:8000`
 
 ---
 
-## 📝 How It Works
+## How It Works
 
 ### 1. **Emotion Detection**
 - User enters text in the input box
@@ -89,7 +89,7 @@ Based on detected emotion and intensity:
 - Plays generated audio in browser
 - Shows voice parameters applied (rate, volume)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -101,7 +101,21 @@ Based on detected emotion and intensity:
 | **Deployment** | Render / Docker |
 
 ---
+## Design Philosophy
+Empathy Engine is built on a single conviction: speech without emotion is just noise.
+Most TTS systems treat voice as an afterthought — a flat, mechanical output. This project flips that. Every word spoken is the result of a deliberate pipeline:
 
+**Text** → **Emotion Detection** → **Intensity Analysis** → **Voice Modulation** → **Human-like Speech**
+
+**Why this model?**
+j-hartmann/emotion-english-distilroberta-base was chosen for three reasons: it classifies all 6 Ekman emotions + neutral (not just positive/negative), it returns confidence scores for every emotion (not just a label — these scores are the intensity), and it's fast enough for real-time inference on CPU with no paid infrastructure.
+**How emotion becomes voice**
+Detection alone isn't enough. The pipeline layers three signals:
+LayerWhat it doesModel confidenceBase intensity from the classifier's top-emotion scoreKeyword boostHigh-signal words (devastated, amazing) amplify intensity beyond model predictionVoice mappingRate, volume, and voice index shift per emotion — inspired by voice acting technique
+**Why not use LLMs or premium TTS APIs?**
+Deliberately avoided. The goal was a system that is fast, free to deploy, and fully offline-capable — without sacrificing emotional range. Lightweight transformer + pyttsx3 achieves this. The expressiveness comes from smart parameterization, not expensive models.
+
+---
 ## 📄 Files Overview
 
 ### Backend Files
