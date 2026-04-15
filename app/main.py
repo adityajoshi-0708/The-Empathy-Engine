@@ -78,7 +78,12 @@ def root():
         return FileResponse(index_path, media_type="text/html")
     return {"status": "ok", "service": "Empathy Engine"}
 
+@app.head("/health", summary="Health check")
+def health_check():
+    """Simple health check endpoint."""
+    return {"status": "ok", "service": "Empathy Engine"}
 
+            
 @app.post("/speak", response_model=SpeakResponse, summary="Generate expressive speech")
 def speak(body: SpeakRequest):
     """
