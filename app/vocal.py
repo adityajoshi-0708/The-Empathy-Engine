@@ -14,33 +14,8 @@ os.makedirs(_AUDIO_DIR, exist_ok=True)
 
 
 def generate_speech(text: str, emotion: str, intensity: float) -> dict:
-    """
-    Generate a .wav file from *text* using TTS parameters derived from
-    *emotion* and *intensity*.
 
-    Pipeline:
-    1. Boost intensity based on emotion-specific keywords (expert analysis)
-    2. Fetch voice config and rewrite text for authenticity
-    3. Calculate final TTS parameters (rate, volume)
-    4. Generate and save audio file
-
-    Parameters
-    ----------
-    text      : str   Raw input text from the user.
-    emotion   : str   Detected emotion label (e.g. "joy", "anger").
-    intensity : float Confidence score [0.0, 1.0] from emotion detector.
-
-    Returns
-    -------
-    dict with keys:
-        audio_filename     : str   — filename only (e.g. "joy_1718000000.wav")
-        audio_path         : str   — full filesystem path to the .wav file
-        rewritten_text     : str   — the emotionally enhanced text that was spoken
-        rate               : int   — final TTS rate used
-        volume             : float — final TTS volume used
-        detector_intensity : float — original emotion detector confidence
-        boosted_intensity  : float — intensity after keyword analysis
-    """
+   
     if not text or not text.strip():
         raise ValueError("Text input is empty.")
 
