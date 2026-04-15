@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Engine – AI with Human Voice</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">🎤 Empathy Engine</h1>
+            <p class="subtitle">AI with Human Voice – Express your emotions</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <label for="text-input" class="label">Enter your text:</label>
+                <textarea id="text-input" class="text-input" placeholder="Type something to hear it with emotion..." maxlength="500"></textarea>
+                <div class="char-count">
+                    <span id="char-count">0</span> / 500
+                </div>
+            </section>
+
+            <!-- Preset Examples Section -->
+            <section class="examples-section">
+                <p class="examples-label">📝 Quick Examples:</p>
+                <div class="examples-grid">
+                    <button class="example-btn btn-joy" data-emotion="happy">
+                        😊 Happy Example
+                    </button>
+                    <button class="example-btn btn-sad" data-emotion="sad">
+                        😢 Sad Example
+                    </button>
+                    <button class="example-btn btn-angry" data-emotion="angry">
+                        😠 Angry Example
+                    </button>
+                </div>
+            </section>
+
+            <!-- Generate Button -->
+            <section class="button-section">
+                <button id="generate-btn" class="generate-btn">
+                    Generate Speech
+                </button>
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Processing your emotion...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section" style="display: none;">
+                <!-- Emotion Display -->
+                <div class="emotion-display" id="emotion-display">
+                    <div class="emotion-card">
+                        <h3>Detected Emotion</h3>
+                        <div class="emotion-badge" id="emotion-badge">Neutral</div>
+                        <div class="emotion-details">
+                            <p><strong>Intensity:</strong> <span id="intensity-value">0%</span></p>
+                            <p><strong>Level:</strong> <span id="intensity-level">Low</span></p>
+                            <div class="intensity-bar">
+                                <div class="intensity-fill" id="intensity-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Player -->
+                <div class="audio-player">
+                    <h3>Your Emotional Speech</h3>
+                    <audio id="audio-player" controls style="width: 100%; margin-top: 10px;">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p class="rewritten-text" id="rewritten-text"></p>
+                </div>
+
+                <!-- Voice Parameters -->
+                <div class="voice-params">
+                    <h3>Voice Parameters Applied</h3>
+                    <div class="params-grid">
+                        <div class="param-card">
+                            <p class="param-label">Speech Rate</p>
+                            <p class="param-value" id="rate-value">150 WPM</p>
+                        </div>
+                        <div class="param-card">
+                            <p class="param-label">Volume</p>
+                            <p class="param-value" id="volume-value">0.85</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reset Button -->
+                <button id="reset-btn" class="reset-btn">Generate New Speech</button>
+            </section>
+
+            <!-- Error Section -->
+            <section id="error" class="error-section" style="display: none;">
+                <p id="error-message"></p>
+                <button id="error-close" class="error-close-btn">Dismiss</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by FastAPI + pyttsx3 | Emotion Detection by Transformers</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

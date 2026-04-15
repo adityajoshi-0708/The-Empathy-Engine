@@ -1,0 +1,506 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Empathy Engine – CSS Styling
+   Beautiful, responsive UI with emotion-based color schemes
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    width: 100%;
+    overflow: hidden;
+    animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Header */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Main Content */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.main-content {
+    padding: 40px 30px;
+}
+
+.input-section,
+.examples-section,
+.button-section {
+    margin-bottom: 30px;
+}
+
+.label {
+    display: block;
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.text-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 120px;
+    transition: all 0.3s ease;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: #f8f9ff;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 0.85em;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Examples Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.examples-label {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.example-btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-joy {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.btn-joy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+.btn-sad {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.btn-sad:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
+.btn-angry {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.btn-angry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 112, 154, 0.4);
+}
+
+.example-btn:active {
+    transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Generate Button */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.button-section {
+    text-align: center;
+}
+
+.generate-btn {
+    padding: 16px 50px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.generate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+}
+
+.generate-btn:active {
+    transform: translateY(-1px);
+}
+
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Loading Animation */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e0e0e0;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading p {
+    color: #667eea;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Results Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.results-section {
+    animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.emotion-display {
+    margin-bottom: 30px;
+}
+
+.emotion-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #667eea;
+}
+
+.emotion-card h3 {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.emotion-badge {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.emotion-badge.joy {
+    color: #f5576c;
+}
+
+.emotion-badge.sadness {
+    color: #00f2fe;
+}
+
+.emotion-badge.anger {
+    color: #fa709a;
+}
+
+.emotion-badge.surprise {
+    color: #ffc837;
+}
+
+.emotion-badge.fear {
+    color: #a8edea;
+}
+
+.emotion-badge.neutral {
+    color: #999;
+}
+
+.emotion-details {
+    color: #555;
+    font-size: 0.95em;
+}
+
+.emotion-details p {
+    margin-bottom: 8px;
+}
+
+.intensity-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.intensity-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Audio Player */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.audio-player {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 2px solid #e0e0e0;
+}
+
+.audio-player h3 {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.audio-player audio {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.rewritten-text {
+    margin-top: 15px;
+    padding: 12px;
+    background: white;
+    border-left: 3px solid #667eea;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Voice Parameters */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.voice-params {
+    background: #f5f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.voice-params h3 {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.params-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.param-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-top: 3px solid #667eea;
+    text-align: center;
+}
+
+.param-label {
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.param-value {
+    font-size: 1.4em;
+    color: #667eea;
+    font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Buttons */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1em;
+    font-weight: 600;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Error Section */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.error-section {
+    background: #fee;
+    border-left: 4px solid #f5576c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: slideUp 0.4s ease;
+}
+
+#error-message {
+    color: #d32f2f;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.error-close-btn {
+    background: #f5576c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.error-close-btn:hover {
+    background: #d32f2f;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Footer */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.footer {
+    background: #f5f7fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Responsive Design */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .params-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 25px 20px;
+    }
+
+    .header {
+        padding: 30px 20px;
+    }
+}
