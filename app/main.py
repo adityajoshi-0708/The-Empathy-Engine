@@ -5,8 +5,8 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, field_validator
 
-from app.emotion import detect_emotion
-from app.voice   import generate_speech
+from app.emotion_detection import detect_emotion
+from app.vocal   import generate_speech
 
 # ── App setup ─────────────────────────────────────────────────────────────────
 app = FastAPI(

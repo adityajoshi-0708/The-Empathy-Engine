@@ -89,10 +89,10 @@ def calculate_keyword_intensity_boost(text: str, emotion: str) -> float:
 
 VOICE_CONFIG = {
     "joy": {
-        "rate": 180,
+        "rate": 160,
         "volume": 0.95,
         "voice_index": 1,
-        "rate_scale": 30,
+        "rate_scale": 24,
         "volume_scale": 0.05,
         "description": "Bright, energetic, with natural peaks of excitement"
     },
@@ -122,10 +122,10 @@ VOICE_CONFIG = {
     },
     "surprise": {
         "rate": 160,
-        "volume": 1.0,
-        "voice_index": 1,
-        "rate_scale": 30,
-        "volume_scale": 0.05,
+        "volume": 1.1,
+        "voice_index": 2,
+        "rate_scale": 25,
+        "volume_scale": 0.15,
         "description": "Rapid, expressive, with vocal catch and breathlessness"
     },
     "neutral": {
