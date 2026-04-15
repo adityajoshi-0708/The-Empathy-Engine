@@ -109,9 +109,11 @@ Most TTS systems treat voice as an afterthought — a flat, mechanical output. T
 
 **Why this model?**
 j-hartmann/emotion-english-distilroberta-base was chosen for three reasons: it classifies all 6 Ekman emotions + neutral (not just positive/negative), it returns confidence scores for every emotion (not just a label — these scores are the intensity), and it's fast enough for real-time inference on CPU with no paid infrastructure.
+
 **How emotion becomes voice**
 Detection alone isn't enough. The pipeline layers three signals:
 LayerWhat it doesModel confidenceBase intensity from the classifier's top-emotion scoreKeyword boostHigh-signal words (devastated, amazing) amplify intensity beyond model predictionVoice mappingRate, volume, and voice index shift per emotion — inspired by voice acting technique
+
 **Why not use LLMs or premium TTS APIs?**
 Deliberately avoided. The goal was a system that is fast, free to deploy, and fully offline-capable — without sacrificing emotional range. Lightweight transformer + pyttsx3 achieves this. The expressiveness comes from smart parameterization, not expensive models.
 
